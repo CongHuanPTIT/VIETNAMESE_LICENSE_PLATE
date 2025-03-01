@@ -17,7 +17,7 @@ RESIZED_IMAGE_WIDTH = 20
 RESIZED_IMAGE_HEIGHT = 30
 
 try:
-    img = cv2.imread("data/image/11.jpg")
+    img = cv2.imread("data/image/16.3.jpg")
     img = cv2.resize(img, dsize=(1920, 1080))
 except Exception as e:
     print(str(e))
@@ -173,8 +173,10 @@ if detected == 1:
                 first_line = first_line + strCurrentChar
             else:
                 second_line = second_line + strCurrentChar
-
-        print("\n License Plate " + str(n) + " is: " + first_line + " - " + second_line + "\n")
+        if len(second_line) == 0:
+            print("\n License Plate " + str(n) + " is: " + first_line[:3] + " - " + first_line[3:] + "\n")
+        else:
+            print("\n License Plate " + str(n) + " is: " + first_line + " - " + second_line + "\n")
         roi = cv2.resize(roi, None, fx=0.75, fy=0.75)
         cv2.imshow(str(n), cv2.cvtColor(roi, cv2.COLOR_BGR2RGB))
 
