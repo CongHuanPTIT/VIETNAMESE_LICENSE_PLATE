@@ -28,7 +28,7 @@ def preprocess(imgOriginal):
 
     #Tạo ảnh nhị phân
     return imgGrayscale, imgThresh
-#Trả về ảnh xám và ảnh nhị phân
+# Trả về ảnh xám và ảnh nhị phân
 # end function
 
 ###################################################################################################
